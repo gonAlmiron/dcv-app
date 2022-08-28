@@ -16,6 +16,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 
 
+
 const pages = ['Productos', 'Nosotros', 'Contacto'];
 
 const ResponsiveAppBar = () => {
@@ -29,7 +30,7 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  
+ 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -51,7 +52,6 @@ const ResponsiveAppBar = () => {
           >
             Decilo con Vida            
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -107,7 +107,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            DECILO CON VIDA
           </Typography>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -138,5 +138,5 @@ const ResponsiveAppBar = () => {
       </Container>
     </AppBar>
   );
-};
+}
 export default ResponsiveAppBar;
