@@ -14,9 +14,6 @@ import AdbIcon from '@mui/icons-material/Adb';
 
 
 
-
-
-
 const pages = ['Productos', 'Nosotros', 'Contacto'];
 
 const ResponsiveAppBar = () => {

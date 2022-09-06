@@ -1,9 +1,9 @@
-import { stock } from "../data/data"
+import { Terrario } from "../data/Terrario"
 
-export const pedirDatos = () => {
+export const getItem = () => {
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            resolve(stock)
+            resolve(Terrario)
         }, 2000)
     }) 
 
