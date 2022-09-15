@@ -8,54 +8,37 @@ import Contacto from './components/Contacto/Contacto';
 import Nosotros from './components/Nosotros/Nosotros';
 import { Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CartContext } from './Context/CartContext';
-import { useState } from 'react';
+import { CartProvider } from './Context/CartContext';
 import Cart from './components/Cart/Cart';
+import { DarkModeProvider } from './Context/DarkModeContext';
 
 const App = () => {
 
-const [cart, setCart] = useState([])
-  
-const addToCart = (item) => {
-  setCart([...cart, item])
-}
-
-
-const isInCart = (id) => {
-  return cart.some((item) => item.id === id)
-}
-
-const cartQuantity = () => {
-  return cart.reduce((acc, item) => acc + item.cantidad, 0)
-}
 
     return (
 
-    <CartContext.Provider value={ {
-      cart,
-      addToCart,
-      isInCart,
-      cartQuantity
-    } }>
+  
+      <CartProvider>
+        <DarkModeProvider>
+ 
+        <BrowserRouter>
 
-      <BrowserRouter>
+            <NavBar/>
+            <br/>
 
-          <NavBar/>
-          <br/>
-
-          <Routes>
-              <Route path='/' element={ <ItemListContainer/> }/>
-              <Route path='/Productos' element={<ItemListContainer/>} />
-              <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
-              <Route path='/Contacto' element={<Contacto/>}/>
-              <Route path='/Nosotros' element={<Nosotros/>}/>
-              <Route path='/Cart' element= {<Cart/>} />
-              <Route path="*" element={<Navigate to="/"/>} />
-            </Routes>
-          
-      </BrowserRouter>
-    </CartContext.Provider>
-  );
+            <Routes>
+                <Route path='/' element={ <ItemListContainer/> }/>
+                <Route path='/Productos' element={<ItemListContainer/>} />
+                <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+                <Route path='/Contacto' element={<Contacto/>}/>
+                <Route path='/Nosotros' element={<Nosotros/>}/>
+                <Route path='/Cart' element= {<Cart/>} />
+                <Route path="*" element={<Navigate to="/"/>} />
+              </Routes>
+            
+        </BrowserRouter>
+        </DarkModeProvider>
+      </CartProvider>  );
 }
 
 export default App;
