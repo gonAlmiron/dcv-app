@@ -1,12 +1,10 @@
-import { Terrario } from "../data/Terrario"
+import { terrario } from "../data/terrario"
+
 
 export const getItem = () => {
     return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            resolve(Terrario)
+            resolve(terrario)
         }, 2000)
-    }) 
-
+    })
 }
-
-

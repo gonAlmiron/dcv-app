@@ -1,12 +1,9 @@
 import { stock } from "../data/data"
 
 export const pedirDatos = () => {
-    return new Promise( (resolve, reject) => {
-        setTimeout(() => {
-            resolve(stock)
-        }, 2000)
-    }) 
-
+    return new Promise( (resolve) => {
+            setTimeout(() => {
+                resolve(stock)
+            }, 1500)
+        } )
 }
-
-

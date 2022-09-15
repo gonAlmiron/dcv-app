@@ -1,34 +1,44 @@
 import {useEffect, useState} from "react"
-import {getItem} from "../../helpers/getItem"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import Terrario from "../data/Terrario"
+import { useParams } from 'react-router-dom'
+import { pedirDatos } from "../../helpers/pedirDatos"
+import Spinner from "../Spinner/Spinner"
 
 
-    const ItemDetailContainer = () => {
 
-    const {item, setItem} = useState(null)
-    
+const ItemDetailContainer = () => {
 
-        useEffect (() => {
-            getItem()
-            .then((res) => {
-                setItem(res)
-            })
-            .catch(err => console.log(err))
-                
+    const [item, setItem] = useState([])
+    const [loading, setLoading] = useState(true)
 
+    const {itemId} = useParams()
+
+    // console.log(itemId)
+
+    useEffect(() => {
+
+        setLoading()
+        pedirDatos()
+        .then((res) => {
+            setItem( res.find((prod) => prod.id === Number(itemId)) )
+        })
+        .catch(err => console.log(err))
+        .finally(() => {
+            setLoading(false)
+        })
     }, [])
 
     return (
 
         <div>
-              <Terrario/>
-
+            {    loading 
+                ? <Spinner/> :
+            <ItemDetail item={item} key={itemId}/>
+            
+}
         </div>
-
     )
-
-
 }
 
 export default ItemDetailContainer
+
