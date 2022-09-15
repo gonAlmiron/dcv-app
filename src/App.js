@@ -25,13 +25,17 @@ const isInCart = (id) => {
   return cart.some((item) => item.id === id)
 }
 
+const cartQuantity = () => {
+  return cart.reduce((acc, item) => acc + item.cantidad, 0)
+}
 
     return (
 
     <CartContext.Provider value={ {
       cart,
       addToCart,
-      isInCart
+      isInCart,
+      cartQuantity
     } }>
 
       <BrowserRouter>

@@ -7,13 +7,16 @@ const Cart = () => {
     const {cart} = useContext(CartContext)
 
     return (
-<div>
+    <div className="container my-2">"
     <h2>Carrito</h2>
+    <hr/>
 
         {cart.map((item) => (
             <div key={item.id}>
-                <h3>{item.nombre}</h3>
-                <p>{item.descripcion}</p>
+                <h5>{item.nombre}</h5>
+                <p>Cantidad: {item.cantidad}</p>
+                <p>Precio: ${item.precio}</p>
+                <hr/>
             </div>
         ))}
 
