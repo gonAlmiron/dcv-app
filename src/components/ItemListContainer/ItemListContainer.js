@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Navigate } from "react-router-dom"
 import { pedirDatos } from "../../helpers/pedirDatos"
 import ItemList from "../ItemList/ItemList"
 import Spinner from "../Spinner/Spinner"
+import { useLoginContext } from "../../Context/LoginContext"
 
 
 
@@ -35,15 +36,25 @@ const ItemListContainer = () => {
             })
     }, [categoryId])
 
+    const {user} = useLoginContext()
+
 
     return (
-        <div>
-         {
-                loading 
-                ? <Spinner/>
-                : <ItemList productos={productos}/>
+        <>
+            {
+                user.logged
+                ?
+                <div>
+                {
+                       loading 
+                       ? <Spinner/>
+                       : <ItemList productos={productos}/>
+                   }
+               </div>
+               : <Navigate to="/login" />
             }
-        </div>
+      
+        </>
     )
 }
 
