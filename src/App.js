@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartProvider } from './Context/CartContext';
 import { DarkModeProvider } from './Context/DarkModeContext';
 import { LoginProvider } from './Context/LoginContext';
-import { useLoginContext } from './Context/LoginContext';
 import AppRouter from './router/AppRouter';
 
 const App = () => {

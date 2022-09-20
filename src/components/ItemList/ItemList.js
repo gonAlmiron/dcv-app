@@ -8,9 +8,9 @@ const ItemList = ( {productos = []} ) => {
     <hr/>
         { productos.map((prod) => (
         
-    <div key={prod.id} className="col-4">
-        <Item producto={prod} key={prod.id}/>
-        </div> 
+            <div key={prod.id} className="col-4">
+                <Item producto={prod} key={prod.id}/>
+            </div> 
         ))
         }
 </div>

@@ -5,7 +5,6 @@ import Contacto from '../components/Contacto/Contacto';
 import Nosotros from '../components/Nosotros/Nosotros';
 import Cart from '../components/Cart/Cart';
 import { NavBar } from "../components/Header/NavBar.js";
-import userEvent from "@testing-library/user-event";
 
 
 const PrivateRoutes = () => {

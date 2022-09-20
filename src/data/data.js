@@ -4,7 +4,7 @@ export const stock = [
         precio: 1000,
         img: 'https://d22fxaf9t8d39k.cloudfront.net/f290344d4218891f53b5d63e13decf9db76090b0894c54edf242c4230aa7cd6061267.jpeg',
         descripcion: 'Pieza única hecha 100% a mano utilizando la técnica Tiffany. Cada terrario, tiene detrás un proceso íntegramente artesanal y personalizado.',
-        stock: 20,
+        stock: 0,
         category: 'Terrarios'
         
     },
@@ -28,7 +28,7 @@ export const stock = [
         nombre: 'Kokedama Sansi',
         precio: 4000,
         img: 'https://d22fxaf9t8d39k.cloudfront.net/0b5e6b3c572a5073e9d27c6a80932519d0753fb32f46bde1c5f9d7ce8de763dc61267.jpeg',
-        descripcion: 'PTécnica japonesa que aprovecha elementos naturales como sustrato y musgo y exige poco mantenimiento.',
+        descripcion: 'Técnica japonesa que aprovecha elementos naturales como sustrato y musgo y exige poco mantenimiento.',
         stock: 20,
         category: 'Kokedamas'
     },

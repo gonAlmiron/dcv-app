@@ -14,7 +14,12 @@ const Item = ( {producto} ) => {
                 <p>Precio: ${producto.precio}</p>
                 <small>Stock disponible: {producto.stock}</small>
                 <Card.Text>{producto.descripcion}</Card.Text>
-                <Link to={`/item/${producto.id}`} className="btn btn-primary my-2">Ver más</Link>
+                {
+                    producto.stock > 0 
+                    ?  <Link to={`/item/${producto.id}`} className="btn btn-primary my-2">Comprar</Link>
+                    : <Card.Text className="btn btn-outline-danger">No hay stock de este producto</Card.Text>
+                }
+               
 
              </Card.Body>
         </Card>

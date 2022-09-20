@@ -42,6 +42,8 @@ const LoginScreen = () => {
                 onChange={handlePassChange}
                  />
                 <br/>
+
+                {user.error && <small className="alert">{user.error}</small>}
                 <button className="btn btn-primary" type="submit">Ingresar</button>
             </form>
         </div>

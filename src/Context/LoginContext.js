@@ -35,11 +35,24 @@ export const LoginProvider = ({children}) => {
             if (match.password === values.pass) {
                 setUser({
                     user: match.email,
-                    logged: true
+                    logged: true,
+                    error: ''
                 })
-            } else { alert("password incorrecto")}
+            } else { 
+                setUser({
+                    user: '',
+                    logged: false,
+                    error: 'Password incorrecto'
+                })
+               }
+
         } else {
-            alert("Email incorrecto")
+            setUser({
+                user: '',
+                logged: false,
+                error: "Email incorrecto"
+            })
+       
         }
     }
 

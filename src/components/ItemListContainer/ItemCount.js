@@ -1,7 +1,3 @@
-// import {useState, useEffect} from "react";
-
-
-
 
 const ItemCount = ({max, counter, setCounter, handleAgregar}) => {
 
@@ -25,16 +21,24 @@ return (
        
         <button 
             onClick={handleRestar} 
-            className="btn btn-outline-primary">- </button>
+            className={counter ===1 ? "btn btn-outline-danger" : "btn btn-outline-primary"}
+            >
+                -
+            </button>
         <span className="mx-2">{counter}</span>
         <button 
             onClick={handleSumar} 
-            className="btn btn-primary"> +</button>
+            disabled= {counter === max}
+            className={counter === max ? "btn btn-outline-danger" : "btn btn-primary"}>
+                 +
+        </button>
         <br/>
         <br/>
 
     <br/>
-    <button onClick={handleAgregar} className="btn btn-success my-2">
+    <button 
+    disabled={counter === 0}
+    onClick={handleAgregar} className="btn btn-success my-2">
                 Agregar al carrito
             </button>
     </div>

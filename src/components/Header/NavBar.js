@@ -4,11 +4,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import { useLoginContext } from '../../Context/LoginContext';
+import { useCartContext } from '../../Context/CartContext';
 
 
 export const NavBar = () => {
 
   const {user, logout} = useLoginContext()
+  const {cart} = useCartContext()
 
   return (
     <>
@@ -22,7 +24,6 @@ export const NavBar = () => {
             
         
           </Nav>
-          <button><CartWidget/></button>
         </Container>
         
         <div className='header-user'>
@@ -30,6 +31,8 @@ export const NavBar = () => {
           <button onClick={logout} className='btn btn-outline-danger'>Logout</button>
         </div>
 
+    
+    {cart.length > 0 ? <button><CartWidget/></button> : ''}
         
       </Navbar>
         
